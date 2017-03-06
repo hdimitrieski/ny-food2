@@ -5,6 +5,7 @@ import CalculatorComponent from './calculator/CalculatorComponent';
 import Login from './login/Login';
 import * as firebase from "firebase";
 import { isAuthenticated } from "./login/AuthService";
+import {ProductList} from './products/ProductList';
 
 const firebaseConfig = {
     apiKey: "AIzaSyBWZy9gbtIO8bC4dSuhA1YCmAIwyy8XDcU",
@@ -51,6 +52,7 @@ class Root extends Component {
                   <IndexRedirect to="/home"/>
                   <Route path='login' component={Login}/>
                   <Route path='home' component={CalculatorComponent} onEnter={this.requireAuth}/>
+                  <Route path='products' component={ProductList}/>
                   <Route path='*' onEnter={this.avoidPageNotFound} />
               </Route>
           </Router>
